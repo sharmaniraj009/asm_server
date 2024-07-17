@@ -12,6 +12,29 @@
 
 _start:
 
+    ; This code is written in assembly language for the x86-64 architecture.
+    ; It represents a server program that performs various system calls.
+
+    ; The first system call (syscall) is used to create a socket.
+    ; It sets the value of rax to 41 (SYS_socketcall) to indicate the type of system call.
+    ; The values of rdi, rsi, and rdx are set to 2, 1, and 0 respectively, which specify the arguments for the system call.
+
+    ; The second system call is used to bind the socket to a specific address.
+    ; It sets the value of rax to 49 (SYS_bind) to indicate the type of system call.
+    ; The values of rdi, rsi, and rdx are set to 3, offset sockaddr, and 16 respectively.
+    ; The offset sockaddr is the address of the sockaddr structure that contains the IP address and port number.
+
+    ; The third system call is used to listen for incoming connections on the socket.
+    ; It sets the value of rax to 50 (SYS_listen) to indicate the type of system call.
+    ; The values of rdi and rsi are set to 3 and 0 respectively.
+
+    ; The fourth system call is used to accept an incoming connection.
+    ; It sets the value of rax to 43 (SYS_accept) to indicate the type of system call.
+    ; The values of rdi and rsi are set to 3 and 0 respectively.
+    ; The value of rdx is set to 0, which indicates that the address of the client socket structure is not needed.
+
+    ; After accepting the connection, the program exits by calling the exit system call.
+    ; It sets the value of rdi to 0 and rax to 60 (SYS_exit) to indicate the type of system call.
     mov rax, 41
     mov rdi, 2
     mov rsi, 1
