@@ -11,7 +11,7 @@
 .section .text
 
 _start:
-
+/*
     ; This code is written in assembly language for the x86-64 architecture.
     ; It represents a server program that performs various system calls.
 
@@ -35,6 +35,7 @@ _start:
 
     ; After accepting the connection, the program exits by calling the exit system call.
     ; It sets the value of rdi to 0 and rax to 60 (SYS_exit) to indicate the type of system call.
+    */
     mov rax, 41
     mov rdi, 2
     mov rsi, 1
